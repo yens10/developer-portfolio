@@ -42,6 +42,12 @@ const alternate = (target: Locale) => projectSlug ? projectPath(target, projectS
             ? saved
             : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       } catch { /* The site still works when storage is blocked. */ }
+      // Avoid displaying English briefly when a saved Spanish preference is restored.
+      try {
+        if (document.documentElement.lang === 'en' && localStorage.getItem('yemis-locale') === 'es') {
+          document.documentElement.dataset.localeLoading = 'true';
+        }
+      } catch { /* Language selection still works without storage. */ }
     </script>
   </head>
   <body data-copy-success={labels.copiedEmail}>

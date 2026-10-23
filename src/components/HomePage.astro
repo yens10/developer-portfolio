@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import ProjectCard from './ProjectCard.astro';
-import { site } from '../data/site';
+import { site, socialLinks } from '../data/site';
 import { getContent } from '../i18n/content';
 import type { Locale } from '../i18n/config';
 interface Props { locale: Locale; }
@@ -143,9 +143,15 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
           <div class="contact-actions">
             {site.email ? <a href={`mailto:${site.email}?subject=${encodeURIComponent(labels.emailSubject)}`} class="button button-primary">{labels.sendEmail} <span aria-hidden="true">↗</span></a> : <a href={site.github} target="_blank" rel="noopener noreferrer" class="button button-primary">{labels.exploreGithub} <span aria-hidden="true">↗</span></a>}
             {site.email && <button type="button" class="button button-contact-ghost" data-copy-email={site.email}>{labels.copyEmail} <span aria-hidden="true">⧉</span></button>}
-            {site.linkedin && <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="button button-contact-ghost">LinkedIn <span aria-hidden="true">↗</span></a>}
             {site.resume && <a href={site.resume} class="button button-contact-ghost" download>{labels.downloadResume} <span aria-hidden="true">↓</span></a>}
           </div>
+          <nav class="contact-socials" aria-label={labels.socialNetworks}>
+            {socialLinks.map(({ name, href }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                {name}<span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </nav>
         </div>
         <div class="contact-bottom" data-reveal><span>{labels.letsMakeItWork}</span><span>{labels.contactTagline}</span></div>
       </div>

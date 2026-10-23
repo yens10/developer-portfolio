@@ -1,86 +1,101 @@
-# Developer Portfolio
+<div align="center">
 
-Bilingual developer portfolio built with Astro and TypeScript. Responsive design with English and Spanish support.
+<img src="./public/brand/yemis-logo.svg" alt="Yemis Paredez logo" width="96" height="96" />
 
-The portfolio presents Yems's selected work, technical expertise, experience, and contact links. It generates static HTML and preserves the original responsive layout, project illustrations, light/dark themes, and progressive enhancements.
+# Yemis Paredez
 
-## Requirements
+**Software Developer · Content Creator**
 
-- Node.js 22.22.0 or newer, using a supported even-numbered release
-- npm
+I'm Yemis, a developer from Peru. I enjoy building useful web applications, exploring new ideas, and sharing what I learn along the way.
 
-## Getting started
+<p>
+  <img src="https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white" alt="Astro" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/English%20%7C%20Espa%C3%B1ol-2D3748?style=flat-square" alt="English and Spanish" />
+</p>
 
-```sh
+</div>
+
+---
+
+<h2 align="center">Visit my portfolio</h2>
+
+<p align="center">
+  My portfolio is live on Netlify. Switch between English and Spanish without changing the website address.
+</p>
+
+<p align="center">
+  <a href="https://portfolio-yemis.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/View%20Live%20Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Visit my live portfolio on Netlify" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://portfolio-yemis.netlify.app/">portfolio-yemis.netlify.app</a>
+</p>
+
+---
+
+<h2 align="center">Find me online</h2>
+
+<p align="center">
+  <a href="https://github.com/yens10" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
+  <a href="https://www.linkedin.com/in/yemis-paredez" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" /></a>
+  <a href="https://www.instagram.com/yemis_paredez" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram profile" /></a>
+  <a href="https://www.tiktok.com/@yemis_paredez" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok profile" /></a>
+  <a href="https://www.facebook.com/yemiseliseo.paredezquispe" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Facebook-0866FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook profile" /></a>
+</p>
+
+---
+
+## About this portfolio
+
+This repository is the source code for my personal website. I use it to introduce myself and share projects I've worked on or am currently developing. You'll find the problem behind each project, the approach I took, and its current stage.
+
+Some projects involve private or institutional work. I describe my contributions without publishing their source code or confidential information.
+
+The website uses **Astro** and **TypeScript**, works on desktop and mobile, and includes **light/dark themes**. English is the default language. The language selector changes the displayed content without changing the browser URL, and the selected language is remembered. Project pages work in both languages.
+
+<details>
+<summary><strong>Run the portfolio locally</strong></summary>
+
+<br />
+
+You'll need Node.js **22.22.0 or newer** and npm.
+
+```bash
 git clone https://github.com/yens10/developer-portfolio.git
 cd developer-portfolio
 npm ci
 npm run dev
 ```
 
-Open `http://localhost:4321/`. On Windows, use `npm.cmd` if PowerShell blocks the npm script; no execution-policy changes are necessary.
+Open `http://localhost:4321/` in your browser.
 
-## Commands
-
-| Command | Purpose |
+| Command | What it does |
 | --- | --- |
 | `npm run dev` | Start the development server |
-| `npm run check` | Validate Astro components and TypeScript |
-| `npm run build` | Generate the production website in `dist/` |
-| `npm run preview` | Preview the production build locally |
+| `npm run check` | Check Astro components and TypeScript |
+| `npm run build` | Build the static site in `dist/` |
+| `npm run preview` | Preview the production build |
 
-The committed `package-lock.json` records the dependency versions. Use `npm ci` for reproducible installations.
+</details>
 
-## Languages and navigation
+<details>
+<summary><strong>How the portfolio is organized</strong></summary>
 
-English is the default language. Selecting Spanish does not redirect subsequent visits to English URLs.
+<br />
 
-| Route | Content |
-| --- | --- |
-| `/` | English homepage |
-| `/es/` | Spanish homepage |
-| `/projects/<slug>/` | English project case study |
-| `/es/projects/<slug>/` | Spanish project case study |
-| `/404.html` | English fallback error page |
+- `src/data/site.ts` — my public profile and social links
+- `src/i18n/content.ts` — English and Spanish website content
+- `src/components/` — reusable page components
+- `src/pages/` — pages and localized project routes
+- `src/styles/global.css` — responsive styles and themes
 
-The four project slugs are `workflow-platform`, `municipal-portal`, `personal-finance`, and `loan-tracker`. The EN/ES switch uses ordinary links and preserves the current project slug. Document language, metadata, navigation, and accessibility labels follow the selected locale. Theme preference is stored independently in browser local storage.
+The site builds to `dist/` for static hosting, including Netlify.
 
-## Project structure
+</details>
 
-```text
-developer-portfolio/
-  public/                 Static favicon and robots.txt
-  src/
-    components/           Shared homepage, header, footer, and project views
-    data/site.ts          Public profile settings and shared project types
-    i18n/config.ts        Locale definitions and URL helpers
-    i18n/content.ts       English and Spanish content
-    layouts/              Shared document layout and metadata
-    pages/                Homepage, project, Spanish, and error routes
-    scripts/ui.ts         Theme, menu, filters, scroll, and clipboard behavior
-    styles/global.css     Responsive styles and themes
-  astro.config.mjs
-  package.json
-  package-lock.json
-  tsconfig.json
-```
+---
 
-## Updating content
-
-- Edit `src/data/site.ts` to configure public profile links. Email, LinkedIn, and resume are intentionally empty; their actions appear only when configured. GitHub is the contact fallback.
-- Edit both locales in `src/i18n/content.ts` when adding or updating user-facing content. Keep property names, slugs, filenames, comments, and technical documentation in English.
-- Add each new project slug to `projectSlugs` in `src/data/site.ts` and provide its content in both languages.
-- Place an optional public resume at `public/resume.pdf`, then set `site.resume` to `/resume.pdf`.
-- Update `src/styles/global.css` for presentation changes.
-
-## Deployment
-
-Build with `npm run build` and publish `dist/` to a static host. No backend, database, API key, or environment variable is required. Google Fonts is loaded externally, with local font fallbacks.
-
-The existing routes and assets assume hosting at a domain root. A GitHub repository alone does not deploy the website. Hosting under a subdirectory, including GitHub Pages at `/developer-portfolio/`, requires configuring Astro's base path and updating root-relative navigation and assets before deployment.
-
-## Public content and security
-
-Institutional projects are described as portfolio case studies. Their private source code and internal data are not included. Project card illustrations use sample data. External institutional website links are retained from the original portfolio.
-
-Do not commit secrets or private materials. `.gitignore` excludes dependencies, generated output, environment files, common credential files, local npm configuration, logs, and archives. Review any future additions before publishing.
+<p align="center"><sub>Made by Yemis Paredez · Peru</sub></p>

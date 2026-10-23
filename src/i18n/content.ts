@@ -36,7 +36,7 @@ type Labels = {
   caseApproach: string; caseApproachTitle: string; caseContribution: string;
   caseContributionTitle: string; nextProject: string;
   notFoundTitle: string; notFoundMessage: string; returnHome: string;
-  pageTitle: string; casePageTitle: string; copiedEmail: string;
+  pageTitle: string; casePageTitle: string; copiedEmail: string; socialNetworks: string;
   workflowReceived: string; portalGovernment: string; portalHero: string;
   financeSummary: string; financeIncome: string; financeExpenses: string;
   loansTitle: string; loansHero: string; loan: string; loanActive: string;
@@ -91,7 +91,7 @@ export const content: Record<Locale, PortfolioContent> = {
       caseApproach: '02 / THE APPROACH', caseApproachTitle: 'Design the solution.',
       caseContribution: '03 / MY CONTRIBUTION', caseContributionTitle: 'Build with purpose.', nextProject: 'NEXT PROJECT',
       notFoundTitle: 'PAGE NOT FOUND', notFoundMessage: 'This page does not exist or has moved.', returnHome: 'Return home',
-      pageTitle: 'Yems — Software developer & web systems', casePageTitle: 'Project case study', copiedEmail: 'Email copied to clipboard',
+      pageTitle: 'Yemis Paredez — Software Developer', casePageTitle: 'Project case study', copiedEmail: 'Email copied to clipboard', socialNetworks: 'Social media profiles',
       workflowReceived: 'DOCUMENT RECEIVED', portalGovernment: 'DIGITAL GOVERNMENT', portalHero: 'Connecting people.',
       financeSummary: 'SUMMARY · DEMO', financeIncome: 'INCOME', financeExpenses: 'EXPENSES',
       loansTitle: 'MY LOANS', loansHero: 'Stay on top of it.', loan: 'Loan', loanActive: 'ACTIVE', loanCurrent: 'ON TIME',
@@ -194,7 +194,7 @@ export const content: Record<Locale, PortfolioContent> = {
       caseApproach: '02 / LA ESTRATEGIA', caseApproachTitle: 'Diseñar la solución.',
       caseContribution: '03 / MI PARTICIPACIÓN', caseContributionTitle: 'Convertirlo en producto.', nextProject: 'SIGUIENTE PROYECTO',
       notFoundTitle: 'PÁGINA NO ENCONTRADA', notFoundMessage: 'Esta ruta no existe o ha cambiado de lugar.', returnHome: 'Volver al inicio',
-      pageTitle: 'Yems — Desarrollo de software y sistemas', casePageTitle: 'Caso de proyecto', copiedEmail: 'Correo copiado al portapapeles',
+      pageTitle: 'Yemis Paredez — Desarrollador de Software', casePageTitle: 'Caso de proyecto', copiedEmail: 'Correo copiado al portapapeles', socialNetworks: 'Redes sociales',
       workflowReceived: 'DOCUMENTO RECIBIDO', portalGovernment: 'GOBIERNO DIGITAL', portalHero: 'Conectamos personas.',
       financeSummary: 'RESUMEN · DEMO', financeIncome: 'INGRESOS', financeExpenses: 'GASTOS',
       loansTitle: 'MIS PRÉSTAMOS', loansHero: 'Todo bajo control.', loan: 'Préstamo', loanActive: 'ACTIVO', loanCurrent: 'AL DÍA',
