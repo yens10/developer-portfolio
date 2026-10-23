@@ -496,12 +496,17 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
   place-items: center;
   min-width: 35px;
   min-height: 33px;
-  padding-inline: 6px;
+  padding: 5px;
   border-radius: 7px;
   color: var(--muted);
-  font: 700 11px/1 'DM Sans', sans-serif;
-  letter-spacing: .035em;
   transition: background .2s, color .2s;
+}
+.language-flag {
+  display: block;
+  width: 25px;
+  height: 17px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .14);
 }
 .language-switch a:hover { background: var(--panel-2); color: var(--text); }
 .language-switch a[aria-current='page'], .language-switch a[aria-current='page']:hover {
@@ -518,6 +523,7 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
   .wordmark-icon { transform: rotate(-12deg) scale(.85); margin-right: 4px; }
   .nav-actions { gap: 6px; }
   .language-switch { gap: 1px; padding: 3px; }
-  .language-switch a { min-width: 30px; min-height: 31px; font-size: 10px; }
+  .language-switch a { min-width: 33px; min-height: 31px; padding: 4px; }
+  .language-flag { width: 23px; height: 16px; }
   .nav-actions .icon-button { width: 37px; height: 37px; }
 }
