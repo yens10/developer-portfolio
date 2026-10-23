@@ -186,7 +186,7 @@ async function switchLocale(locale: Locale): Promise<void> {
 document.addEventListener('click', (event) => {
   const element = event.target;
   if (!(element instanceof Element)) return;
-  const toggle = element.closest<HTMLAnchorElement>('a[data-language-target]');
+  const toggle = element.closest<HTMLButtonElement>('button[data-language-target]');
   if (!toggle || event.defaultPrevented) return;
   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   const locale = toggle.dataset.languageTarget;
