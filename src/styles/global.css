@@ -44,6 +44,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { margin: 0; background: var(--bg); color: var(--text); min-width: 320px; -webkit-font-smoothing: antialiased; }
+/* Prevent a flash of the default language when restoring a saved preference. */
+html.js[data-locale-loading='true'] body { visibility: hidden; }
 body, button, a { -webkit-tap-highlight-color: transparent; }
 button, input { font: inherit; }
 button { cursor: pointer; }
