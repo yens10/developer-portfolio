@@ -66,9 +66,9 @@ img, svg { vertical-align: middle; }
 .nav-shell { height: 83px; display: flex; align-items: center; justify-content: space-between; gap: 34px; }
 .wordmark { display: inline-flex; align-items: center; font-size: 24px; font-weight: 700; letter-spacing: -.09em; flex: 0 0 auto; }
 .wordmark-period, .footer-wordmark span { color: var(--accent-text); }
-.wordmark-icon { width: 27px; height: 27px; display: grid; grid-template-columns: repeat(2, 9px); grid-template-rows: repeat(2,9px); gap: 3px; align-content: center; transform: rotate(-12deg); margin-right: 11px; }
-.wordmark-icon span { background: var(--accent); border-radius: 2px; }
-.wordmark-icon span:nth-child(2), .wordmark-icon span:nth-child(3) { opacity: .37; }
+.site-logo, .footer-logo { display: block; flex: 0 0 auto; border-radius: 7px; object-fit: contain; }
+.site-logo { width: 38px; height: 38px; margin-right: 10px; }
+.footer-logo { width: 40px; height: 40px; }
 .nav-links { display: flex; align-items: center; gap: clamp(21px, 3vw, 43px); margin-left: auto; }
 .nav-links a { font-size: 13px; color: var(--muted); font-weight: 600; transition: color .2s; }
 .nav-links a:hover { color: var(--text); }
@@ -299,7 +299,7 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
 /* FOOTER */
 .site-footer { background: var(--bg); }
 .footer-main { display: flex; align-items: center; gap: 25px; padding-top: 44px; padding-bottom: 43px; }
-.footer-wordmark { font-size: 27px; font-weight: 700; letter-spacing: -.085em; }
+.footer-wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 27px; font-weight: 700; letter-spacing: -.085em; }
 .footer-main p { font-size: 12px; color: var(--muted); margin: 0; }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 27px; }
 .footer-socials a { font-size: 12px; color: var(--muted); transition: color .2s; }
@@ -527,7 +527,7 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
 }
 @media (max-width: 390px) {
   .wordmark { font-size: 21px; }
-  .wordmark-icon { transform: rotate(-12deg) scale(.85); margin-right: 4px; }
+  .site-logo { width: 32px; height: 32px; margin-right: 5px; }
   .nav-actions { gap: 6px; }
   .language-switch { gap: 1px; padding: 3px; }
   .language-switch a { min-width: 33px; min-height: 31px; padding: 4px; }
