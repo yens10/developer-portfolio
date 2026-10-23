@@ -24,8 +24,29 @@ const languageHref = (target: Locale) => projectSlug ? projectPath(target, proje
     </nav>
     <div class="nav-actions">
       <nav class="language-switch" aria-label={labels.language}>
-        <a href={languageHref('en')} lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} aria-label="English">EN</a>
-        <a href={languageHref('es')} lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} aria-label="Español">ES</a>
+        <a href={languageHref('en')} lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} aria-label="Switch to English" title="English">
+          <svg class="language-flag" viewBox="0 0 60 30" role="presentation" aria-hidden="true" focusable="false">
+            <rect width="60" height="30" fill="#012169" />
+            <path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6" />
+            <path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4" />
+            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10" />
+            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6" />
+          </svg>
+        </a>
+        <a href={languageHref('es')} lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} aria-label="Cambiar a español" title="Español">
+          <svg class="language-flag" viewBox="0 0 60 36" role="presentation" aria-hidden="true" focusable="false">
+            <rect width="60" height="36" fill="#AA151B" />
+            <rect y="9" width="60" height="18" fill="#F1BF00" />
+            <g transform="translate(17 11)">
+              <rect x="0" y="0" width="8" height="12" rx="1" fill="#AA151B" stroke="#fff" stroke-width=".75" />
+              <rect x="1.5" y="1.5" width="2.5" height="3.5" fill="#F1BF00" />
+              <rect x="4.5" y="1.5" width="2" height="3.5" fill="#fff" />
+              <rect x="1.5" y="6" width="5" height="3.2" fill="#fff" />
+              <path d="M2 10h4l-2 2z" fill="#F1BF00" />
+              <path d="M0 0h8M2-1.5h4" fill="none" stroke="#F1BF00" stroke-width="1" />
+            </g>
+          </svg>
+        </a>
       </nav>
       <button type="button" class="icon-button theme-button" data-theme-toggle aria-label={labels.theme} title={labels.theme}>
         <svg class="moon-icon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20.3 15.1A8.5 8.5 0 0 1 8.9 3.7 8.5 8.5 0 1 0 20.3 15.1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
