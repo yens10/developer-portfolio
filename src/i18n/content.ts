@@ -14,7 +14,7 @@ type Labels = {
   navContact: string; home: string; language: string; theme: string;
   openMenu: string; closeMenu: string; skipToContent: string;
   heroKicker: string; heroRole: string; heroLineOne: string; heroLineTwo: string; heroSolution: string;
-  exploreProjects: string; workTogether: string; scrollToExplore: string;
+  exploreProjects: string; workTogether: string; scrollToExplore: string; heroHighlights: string; heroLanguages: string;
   codeDesign: string; codeIntent: string; codeBuild: string; codeJudgment: string;
   ticker: string; architecture: string; digitalProduct: string;
   selectedWork: string; projectsTitle: string; projectsEmphasis: string;
@@ -65,7 +65,7 @@ export const content: Record<Locale, PortfolioContent> = {
       navContact: 'Let’s talk', home: 'Go to home', language: 'Select language', theme: 'Toggle light or dark theme',
       openMenu: 'Open menu', closeMenu: 'Close menu', skipToContent: 'Skip to content',
       heroKicker: 'HI, I’M', heroRole: 'FULL-STACK DEVELOPER', heroLineOne: 'I shape ideas', heroLineTwo: 'I build', heroSolution: 'solutions.',
-      exploreProjects: 'Explore projects', workTogether: 'Work with me', scrollToExplore: 'SCROLL TO EXPLORE',
+      exploreProjects: 'Explore projects', workTogether: 'Work with me', scrollToExplore: 'SCROLL TO EXPLORE', heroHighlights: 'Portfolio overview', heroLanguages: 'Languages',
       codeDesign: 'DESIGN', codeIntent: 'WITH INTENTION', codeBuild: 'BUILD', codeJudgment: 'WITH PURPOSE',
       ticker: 'Technologies and areas of work', architecture: 'ARCHITECTURE', digitalProduct: 'DIGITAL PRODUCTS',
       selectedWork: 'SELECTED WORK', projectsTitle: 'Projects that', projectsEmphasis: 'solve problems.',
@@ -168,7 +168,7 @@ export const content: Record<Locale, PortfolioContent> = {
       navContact: 'Hablemos', home: 'Ir al inicio', language: 'Seleccionar idioma', theme: 'Cambiar entre tema claro y oscuro',
       openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', skipToContent: 'Saltar al contenido',
       heroKicker: 'HOLA, SOY', heroRole: 'DESARROLLADOR FULL STACK', heroLineOne: 'Diseño ideas', heroLineTwo: 'Construyo', heroSolution: 'soluciones.',
-      exploreProjects: 'Explorar proyectos', workTogether: 'Trabajemos juntos', scrollToExplore: 'DESLIZA PARA EXPLORAR',
+      exploreProjects: 'Explorar proyectos', workTogether: 'Trabajemos juntos', scrollToExplore: 'DESLIZA PARA EXPLORAR', heroHighlights: 'Resumen del portafolio', heroLanguages: 'Idiomas',
       codeDesign: 'DISEÑAR', codeIntent: 'CON INTENCIÓN', codeBuild: 'CONSTRUIR', codeJudgment: 'CON CRITERIO',
       ticker: 'Tecnologías y áreas de trabajo', architecture: 'ARQUITECTURA', digitalProduct: 'PRODUCTO DIGITAL',
       selectedWork: 'TRABAJO SELECCIONADO', projectsTitle: 'Proyectos que', projectsEmphasis: 'resuelven.',
