@@ -1,0 +1,20 @@
+---
+import { site } from '../data/site';
+import { getContent } from '../i18n/content';
+import { homePath, type Locale } from '../i18n/config';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { labels } = getContent(locale);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-main">
+    <a href={homePath(locale)} class="footer-wordmark">{site.brand}<span>.</span></a>
+    <p>{labels.footerMotto}</p>
+    <a href="#main-content" class="back-to-top" aria-label={labels.backToTop}>{labels.backToTop} <span aria-hidden="true">↑</span></a>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {year} {site.name}. {labels.footerPortfolio}</span>
+    <span>{labels.builtWith} <strong>Astro</strong> · {locale === 'en' ? 'Peru' : 'Perú'}</span>
+  </div>
+</footer>

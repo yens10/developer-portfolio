@@ -1,0 +1,10 @@
+---
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+import { projectSlugs } from '../../../data/site';
+interface Props { slug: string; }
+export function getStaticPaths() {
+  return projectSlugs.map((slug) => ({ params: { slug }, props: { slug } }));
+}
+const { slug } = Astro.props;
+---
+<ProjectDetail locale="es" slug={slug} />

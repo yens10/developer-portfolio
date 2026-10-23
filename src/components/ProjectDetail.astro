@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { site } from '../data/site';
+import { getContent } from '../i18n/content';
+import { homePath, projectPath, type Locale } from '../i18n/config';
+interface Props { locale: Locale; slug: string; }
+const { locale, slug } = Astro.props;
+const { labels, projects } = getContent(locale);
+const index = projects.findIndex((project) => project.slug === slug);
+if (index < 0) throw new Error(`Unknown project ID: ${slug}`);
+const project = projects[index];
+const next = projects[(index + 1) % projects.length];
+---
+<BaseLayout locale={locale} projectSlug={slug} title={`${project.name} — ${labels.casePageTitle} | ${site.name}`} description={project.shortDescription}>
+  <Header locale={locale} projectSlug={slug} />
+  <main id="main-content" class="case-page">
+    <section class="case-hero section" data-tone={project.tone}>
+      <div class="container">
+        <a href={`${homePath(locale)}#projects`} class="case-back"><span aria-hidden="true">←</span> {labels.caseBack}</a>
+        <div class="case-hero-header">
+          <div><div class="section-label"><span>{project.order}</span> / {labels.categories[project.category].toUpperCase()}</div><h1>{project.name}<span>.</span></h1><p>{project.shortDescription}</p></div>
+          <div class="case-hero-symbol" aria-hidden="true">{project.order}<small>YEMS / {labels.workLabel}</small></div>
+        </div>
+        <div class="case-hero-footer"><span><b>{labels.caseStatus}</b>{project.status}</span><span><b>{labels.casePeriod}</b>{project.period}</span><span><b>{labels.caseRole}</b>{project.role}</span></div>
+      </div>
+    </section>
+    <section class="section case-details">
+      <div class="container case-grid">
+        <div class="case-sidebar"><span>{labels.caseOverview}</span><p>{labels.caseOverviewText}</p><div class="case-stack">{project.stack.map((tech) => <span class="tag">{tech}</span>)}</div>{project.url && <a href={project.url} class="button button-primary case-external" target="_blank" rel="noopener noreferrer">{labels.caseVisitSite} <span aria-hidden="true">↗</span></a>}</div>
+        <div class="case-body"><article><span class="case-number">{labels.caseChallenge}</span><h2>{labels.caseChallengeTitle}</h2><p>{project.challenge}</p></article><article><span class="case-number">{labels.caseApproach}</span><h2>{labels.caseApproachTitle}</h2><p>{project.approach}</p></article><article><span class="case-number">{labels.caseContribution}</span><h2>{labels.caseContributionTitle}</h2><p>{project.contribution}</p></article><div class="case-notice"><span aria-hidden="true">ⓘ</span><p>{project.caveat}</p></div></div>
+      </div>
+    </section>
+    <section class="case-next"><div class="container"><span>{labels.nextProject}</span><a href={projectPath(locale, next.slug)}><strong>{next.name}</strong><span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

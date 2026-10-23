@@ -1,0 +1,35 @@
+# Dependencies and generated output
+node_modules/
+dist/
+.astro/
+coverage/
+.cache/
+
+# Environment files and local credentials
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Logs and operating system files
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local editor state
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Archives and temporary files
+*.zip
+*.tgz
+*.tmp

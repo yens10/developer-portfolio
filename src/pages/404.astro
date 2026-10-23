@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getContent } from '../i18n/content';
+const { labels } = getContent('en');
+---
+<BaseLayout locale="en" title="Page not found — Yems" description={labels.notFoundMessage}>
+  <Header locale="en" />
+  <main id="main-content" class="not-found section">
+    <div class="container"><p class="section-label"><span>ERROR</span> / {labels.notFoundTitle}</p><h1>404<span>.</span></h1><p>{labels.notFoundMessage}</p><a href="/" class="button button-primary">{labels.returnHome} <span aria-hidden="true">↗</span></a></div>
+  </main>
+  <Footer locale="en" />
+</BaseLayout>

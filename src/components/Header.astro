@@ -1,0 +1,44 @@
+---
+import { site } from '../data/site';
+import { getContent } from '../i18n/content';
+import { homePath, projectPath, type Locale } from '../i18n/config';
+interface Props { locale: Locale; projectSlug?: string; }
+const { locale, projectSlug } = Astro.props;
+const { labels } = getContent(locale);
+const home = homePath(locale);
+const links = [
+  { label: labels.navProjects, href: `${home}#projects` },
+  { label: labels.navExpertise, href: `${home}#expertise` },
+  { label: labels.navAbout, href: `${home}#about` },
+];
+const languageHref = (target: Locale) => projectSlug ? projectPath(target, projectSlug) : homePath(target);
+---
+<header class="site-header" data-site-header>
+  <div class="container nav-shell">
+    <a href={home} class="wordmark" aria-label={labels.home}>
+      <span class="wordmark-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      {site.brand}<span class="wordmark-period">.</span>
+    </a>
+    <nav class="nav-links" aria-label={labels.navigation}>
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <div class="nav-actions">
+      <nav class="language-switch" aria-label={labels.language}>
+        <a href={languageHref('en')} lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} aria-label="English">EN</a>
+        <a href={languageHref('es')} lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} aria-label="Español">ES</a>
+      </nav>
+      <button type="button" class="icon-button theme-button" data-theme-toggle aria-label={labels.theme} title={labels.theme}>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20.3 15.1A8.5 8.5 0 0 1 8.9 3.7 8.5 8.5 0 1 0 20.3 15.1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <a class="button button-small button-outline nav-contact" href={`${home}#contact`}>{labels.navContact} <span aria-hidden="true">↗</span></a>
+      <button type="button" class="icon-button menu-button" data-menu-toggle aria-label={labels.openMenu} data-open-label={labels.openMenu} data-close-label={labels.closeMenu} aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-menu" aria-label={labels.navigation} data-mobile-menu hidden>
+    {links.map((link) => <a href={link.href}>{link.label}<span aria-hidden="true">↗</span></a>)}
+    <a href={`${home}#contact`}>{labels.contact}<span aria-hidden="true">↗</span></a>
+  </nav>
+</header>

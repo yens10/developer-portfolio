@@ -1,0 +1,48 @@
+---
+import type { Project } from '../data/site';
+import { getContent } from '../i18n/content';
+import { projectPath, type Locale } from '../i18n/config';
+interface Props { project: Project; featured?: boolean; locale: Locale; }
+const { project, featured = false, locale } = Astro.props;
+const { labels } = getContent(locale);
+---
+<article class:list={['project-card', featured && 'project-card-featured']} data-category={project.category} data-reveal>
+  <a href={projectPath(locale, project.slug)} class="project-link" aria-label={`${labels.viewProject}: ${project.name}`}>
+    <div class="project-visual" data-tone={project.tone}>
+      <div class="project-visual-top"><span>{labels.visualProject} / {project.order}</span><span class="visual-cross">✳</span></div>
+      {project.slug === 'workflow-platform' && (
+        <div class="mock mock-workflow" aria-hidden="true">
+          <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+          <div class="mock-stage">
+            <div class="mock-stage-head"><span>WORKFLOW / 01</span><b>•••</b></div>
+            <div class="mock-tasks"><div class="mock-task"><i></i><span></span><b>01</b></div><div class="mock-task"><i></i><span></span><b>02</b></div><div class="mock-task"><i></i><span></span><b>03</b></div></div>
+          </div>
+          <div class="mock-floating"><span class="tiny-check">✓</span> {labels.workflowReceived}</div>
+        </div>
+      )}
+      {project.slug === 'municipal-portal' && (
+        <div class="mock mock-portal" aria-hidden="true">
+          <div class="portal-window"><div class="portal-topline"><i></i><span></span><span></span><span></span></div><div class="portal-hero"><div><small>{labels.portalGovernment}</small><b>{labels.portalHero}</b><i></i></div><div class="portal-orb"></div></div><div class="portal-blocks"><span></span><span></span><span></span></div></div>
+        </div>
+      )}
+      {project.slug === 'personal-finance' && (
+        <div class="mock mock-finance" aria-hidden="true">
+          <div class="finance-card"><small>{labels.financeSummary}</small><strong>S/ 8,450<span>.00</span></strong><div class="finance-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="finance-foot"><span>{labels.financeIncome}</span><span>{labels.financeExpenses}</span></div></div>
+          <div class="finance-orbit">↗</div>
+        </div>
+      )}
+      {project.slug === 'loan-tracker' && (
+        <div class="mock mock-loans" aria-hidden="true">
+          <div class="loans-phone"><div class="loans-notch"></div><small>{labels.loansTitle}</small><strong>{labels.loansHero}</strong><div class="loans-row"><span class="loans-circle">↗</span><span><b>{labels.loan} 01</b><i></i></span><em>{labels.loanActive}</em></div><div class="loans-row"><span class="loans-circle">✓</span><span><b>{labels.loan} 02</b><i></i></span><em>{labels.loanCurrent}</em></div></div>
+        </div>
+      )}
+      <span class="project-view" aria-hidden="true">↗</span>
+    </div>
+    <div class="project-content">
+      <div class="project-meta"><span>{project.eyebrow}</span><span class="project-status">{project.status}</span></div>
+      <h3>{project.name}<span aria-hidden="true">↗</span></h3>
+      <p>{project.shortDescription}</p>
+      <div class="tag-group">{project.stack.slice(0, 3).map((tech) => <span class="tag">{tech}</span>)}</div>
+    </div>
+  </a>
+</article>

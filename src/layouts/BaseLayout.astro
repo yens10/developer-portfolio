@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import { getContent } from '../i18n/content';
+import { homePath, projectPath, type Locale } from '../i18n/config';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  projectSlug?: string;
+}
+const { locale, title, description, projectSlug } = Astro.props;
+const { labels, profile } = getContent(locale);
+const finalTitle = title ?? labels.pageTitle;
+const finalDescription = description ?? profile.description;
+const alternate = (target: Locale) => projectSlug ? projectPath(target, projectSlug) : homePath(target);
+---
+<!doctype html>
+<html lang={locale} data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b1117" />
+    <meta name="description" content={finalDescription} />
+    <meta property="og:title" content={finalTitle} />
+    <meta property="og:description" content={finalDescription} />
+    <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'es_PE'} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="alternate" hreflang="en" href={alternate('en')} />
+    <link rel="alternate" hreflang="es" href={alternate('es')} />
+    <link rel="alternate" hreflang="x-default" href={alternate('en')} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{finalTitle}</title>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try {
+        const saved = localStorage.getItem('yems-theme');
+        document.documentElement.dataset.theme =
+          saved === 'light' || saved === 'dark'
+            ? saved
+            : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      } catch { /* The site still works when storage is blocked. */ }
+    </script>
+  </head>
+  <body data-copy-success={labels.copiedEmail}>
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">{labels.skipToContent}</a>
+    <slot />
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script src="../scripts/ui.ts"></script>
+  </body>
+</html>
