@@ -18,6 +18,24 @@ I'm Yemis, a developer from Peru. I enjoy building useful web applications, expl
 
 ---
 
+<h2 align="center">Visit my portfolio</h2>
+
+<p align="center">
+  My personal website is published on Netlify. Explore the Spanish version below.
+</p>
+
+<p align="center">
+  <a href="https://portfolio-yemis.netlify.app/es/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/View%20Live%20Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Visit my live portfolio on Netlify" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://portfolio-yemis.netlify.app/es/">portfolio-yemis.netlify.app/es/</a>
+</p>
+
+---
+
 <h2 align="center">Find me online</h2>
 
 <p align="center">
