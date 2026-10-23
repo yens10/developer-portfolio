@@ -25,7 +25,7 @@ const languageHref = (target: Locale) => projectSlug ? projectPath(target, proje
     </nav>
     <div class="nav-actions">
       <nav class="language-switch" aria-label={labels.language}>
-        <a href={languageHref('en')} lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} aria-label="Switch to English" title="English">
+        <a href={languageHref('en')} data-language-target="en" lang="en" hreflang="en" aria-current={locale === 'en' ? 'page' : undefined} aria-label="Switch to English" title="English">
           <svg class="language-flag" viewBox="0 0 60 30" role="presentation" aria-hidden="true" focusable="false">
             <rect width="60" height="30" fill="#012169" />
             <path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6" />
@@ -34,7 +34,7 @@ const languageHref = (target: Locale) => projectSlug ? projectPath(target, proje
             <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6" />
           </svg>
         </a>
-        <a href={languageHref('es')} lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} aria-label="Cambiar a español" title="Español">
+        <a href={languageHref('es')} data-language-target="es" lang="es" hreflang="es" aria-current={locale === 'es' ? 'page' : undefined} aria-label="Cambiar a español" title="Español">
           <svg class="language-flag" viewBox="0 0 60 36" role="presentation" aria-hidden="true" focusable="false">
             <rect width="60" height="36" fill="#AA151B" />
             <rect y="9" width="60" height="18" fill="#F1BF00" />
