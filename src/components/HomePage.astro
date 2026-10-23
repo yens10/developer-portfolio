@@ -26,7 +26,7 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
             <a href="#projects" class="button button-primary">{labels.exploreProjects} <span aria-hidden="true">↗</span></a>
             <a href="#contact" class="button button-ghost">{labels.workTogether} <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-highlights" aria-label={labels.heroHighlights}>
+          <div class="hero-highlights" role="group" aria-label={labels.heroHighlights}>
             <div class="hero-highlight"><strong>{projects.length.toString().padStart(2, '0')}</strong><span>{labels.navProjects}</span></div>
             <div class="hero-highlight"><strong>EN / ES</strong><span>{labels.heroLanguages}</span></div>
           </div>
