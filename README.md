@@ -21,17 +21,17 @@ I'm Yemis, a developer from Peru. I enjoy building useful web applications, expl
 <h2 align="center">Visit my portfolio</h2>
 
 <p align="center">
-  My personal website is published on Netlify. Explore the Spanish version below.
+  My portfolio is live on Netlify. Switch between English and Spanish without changing the website address.
 </p>
 
 <p align="center">
-  <a href="https://portfolio-yemis.netlify.app/es/" target="_blank" rel="noopener noreferrer">
+  <a href="https://portfolio-yemis.netlify.app/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/View%20Live%20Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Visit my live portfolio on Netlify" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://portfolio-yemis.netlify.app/es/">portfolio-yemis.netlify.app/es/</a>
+  <a href="https://portfolio-yemis.netlify.app/">portfolio-yemis.netlify.app</a>
 </p>
 
 ---
@@ -54,7 +54,7 @@ This repository is the source code for my personal website. I use it to introduc
 
 Some projects involve private or institutional work. I describe my contributions without publishing their source code or confidential information.
 
-The website uses **Astro** and **TypeScript**, works on desktop and mobile, and includes **light/dark themes**. English is the default language; Spanish is available at `/es/`. Project pages are available in both languages.
+The website uses **Astro** and **TypeScript**, works on desktop and mobile, and includes **light/dark themes**. English is the default language. The language selector changes the displayed content without changing the browser URL, and the selected language is remembered. Project pages work in both languages.
 
 <details>
 <summary><strong>Run the portfolio locally</strong></summary>
