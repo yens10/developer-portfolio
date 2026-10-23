@@ -12,16 +12,13 @@ type CareerEntry = { period: string; job: string; organization: string; summary:
 type Labels = {
   navigation: string; navProjects: string; navExpertise: string; navAbout: string;
   navContact: string; home: string; language: string; theme: string;
-  openMenu: string; closeMenu: string; skipToContent: string;
-  heroKicker: string; heroRole: string; heroLineOne: string; heroLineTwo: string; heroSolution: string;
-  exploreProjects: string; workTogether: string; scrollToExplore: string; heroHighlights: string; heroLanguages: string;
+  openMenu: string; closeMenu: string; skipToContent: string; heroLineOne: string; heroLineTwo: string; heroSolution: string;
+  exploreProjects: string; workTogether: string;
   codeDesign: string; codeIntent: string; codeBuild: string; codeJudgment: string;
-  ticker: string; architecture: string; digitalProduct: string;
-  selectedWork: string; projectsTitle: string; projectsEmphasis: string;
+  ticker: string; architecture: string; digitalProduct: string; projectsTitle: string; projectsEmphasis: string;
   projectsIntro: string; filterProjects: string; all: string;
   categories: Record<'institutional' | 'product' | 'concept', string>;
-  projectsNote: string; whatIDo: string; expertiseTitle: string; expertiseEmphasis: string;
-  aLittleAbout: string; aboutTitle: string; aboutEmphasis: string;
+  projectsNote: string; expertiseTitle: string; expertiseEmphasis: string; aboutTitle: string; aboutEmphasis: string;
   aboutLead: string; career: string; myApproach: string; approachTitle: string;
   approachEmphasis: string; principleClarity: string; principleClarityText: string;
   principleQuality: string; principleQualityText: string; principleDelivery: string;
@@ -40,7 +37,7 @@ type Labels = {
   workflowReceived: string; portalGovernment: string; portalHero: string;
   financeSummary: string; financeIncome: string; financeExpenses: string;
   loansTitle: string; loansHero: string; loan: string; loanActive: string;
-  loanCurrent: string; heroArtLabel: string; visualProject: string; codeStatus: string; monogramTagline: string; workLabel: string;
+  loanCurrent: string; heroArtLabel: string; codeStatus: string;
 };
 export type PortfolioContent = {
   profile: { role: string; location: string; description: string; about: string; availability: string };
@@ -63,18 +60,14 @@ export const content: Record<Locale, PortfolioContent> = {
     labels: {
       navigation: 'Main navigation', navProjects: 'Projects', navExpertise: 'Expertise', navAbout: 'About',
       navContact: 'Let’s talk', home: 'Go to home', language: 'Select language', theme: 'Toggle light or dark theme',
-      openMenu: 'Open menu', closeMenu: 'Close menu', skipToContent: 'Skip to content',
-      heroKicker: 'HI, I’M', heroRole: 'FULL-STACK DEVELOPER', heroLineOne: 'I shape ideas', heroLineTwo: 'I build', heroSolution: 'solutions.',
-      exploreProjects: 'Explore projects', workTogether: 'Work with me', scrollToExplore: 'SCROLL TO EXPLORE', heroHighlights: 'Portfolio overview', heroLanguages: 'Languages',
+      openMenu: 'Open menu', closeMenu: 'Close menu', skipToContent: 'Skip to content', heroLineOne: 'I shape ideas', heroLineTwo: 'I build', heroSolution: 'solutions.',
+      exploreProjects: 'Explore projects', workTogether: 'Work with me',
       codeDesign: 'DESIGN', codeIntent: 'WITH INTENTION', codeBuild: 'BUILD', codeJudgment: 'WITH PURPOSE',
-      ticker: 'Technologies and areas of work', architecture: 'ARCHITECTURE', digitalProduct: 'DIGITAL PRODUCTS',
-      selectedWork: 'SELECTED WORK', projectsTitle: 'Projects that', projectsEmphasis: 'solve problems.',
+      ticker: 'Technologies and areas of work', architecture: 'ARCHITECTURE', digitalProduct: 'DIGITAL PRODUCTS', projectsTitle: 'Projects that', projectsEmphasis: 'solve problems.',
       projectsIntro: 'A selection of products and platforms. Each case identifies its actual stage: published, personal, or still being planned.',
       filterProjects: 'Filter projects', all: 'All',
       categories: { institutional: 'Institutional', product: 'Product', concept: 'Concept' },
-      projectsNote: 'Each project describes its scope and current status. Private repositories and institutional data are not disclosed.',
-      whatIDo: 'WHAT I DO', expertiseTitle: 'From an idea to a', expertiseEmphasis: 'working product.',
-      aLittleAbout: 'A LITTLE ABOUT ME', aboutTitle: 'Technology with', aboutEmphasis: 'purpose.',
+      projectsNote: 'Each project describes its scope and current status. Private repositories and institutional data are not disclosed.', expertiseTitle: 'From an idea to a', expertiseEmphasis: 'working product.', aboutTitle: 'Technology with', aboutEmphasis: 'purpose.',
       aboutLead: 'It is not just about writing code. It is about understanding the problem before building a solution.',
       career: 'EXPERIENCE', myApproach: 'MY APPROACH', approachTitle: 'Less noise.', approachEmphasis: 'More impact.',
       principleClarity: 'Clarity', principleClarityText: 'Understand the context and what users actually need first.',
@@ -86,17 +79,16 @@ export const content: Record<Locale, PortfolioContent> = {
       letsMakeItWork: 'LET’S MAKE IT WORK.', contactTagline: 'WEB DEVELOPMENT / SYSTEMS / PRODUCT',
       footerMotto: 'Thoughtful software. Practical solutions.', backToTop: 'Back to top', footerPortfolio: 'Personal portfolio.', builtWith: 'Built with',
       viewProject: 'View project', caseBack: 'Back to projects', caseStatus: 'STATUS', casePeriod: 'PERIOD', caseRole: 'ROLE',
-      caseOverview: 'PROJECT OVERVIEW', caseOverviewText: 'The thinking, scope, and technical decisions behind this initiative.',
-      caseVisitSite: 'Visit website', caseChallenge: '01 / THE CHALLENGE', caseChallengeTitle: 'Understand the problem.',
-      caseApproach: '02 / THE APPROACH', caseApproachTitle: 'Design the solution.',
-      caseContribution: '03 / MY CONTRIBUTION', caseContributionTitle: 'Build with purpose.', nextProject: 'NEXT PROJECT',
-      notFoundTitle: 'PAGE NOT FOUND', notFoundMessage: 'This page does not exist or has moved.', returnHome: 'Return home',
+      caseOverview: 'Project overview', caseOverviewText: 'The thinking, scope, and technical decisions behind this initiative.',
+      caseVisitSite: 'Visit website', caseChallenge: 'The challenge', caseChallengeTitle: 'Understand the problem.',
+      caseApproach: 'The approach', caseApproachTitle: 'Design the solution.',
+      caseContribution: 'My contribution', caseContributionTitle: 'Build with purpose.', nextProject: 'Next project',
+      notFoundTitle: 'Page not found', notFoundMessage: 'This page does not exist or has moved.', returnHome: 'Return home',
       pageTitle: 'Yemis Paredez — Software Developer', casePageTitle: 'Project case study', copiedEmail: 'Email copied to clipboard', socialNetworks: 'Social media profiles',
       workflowReceived: 'DOCUMENT RECEIVED', portalGovernment: 'DIGITAL GOVERNMENT', portalHero: 'Connecting people.',
       financeSummary: 'SUMMARY · DEMO', financeIncome: 'INCOME', financeExpenses: 'EXPENSES',
       loansTitle: 'MY LOANS', loansHero: 'Stay on top of it.', loan: 'Loan', loanActive: 'ACTIVE', loanCurrent: 'ON TIME',
-      heroArtLabel: 'Abstract illustration of software engineering and development',
-      visualProject: 'PROJECT', codeStatus: 'SYSTEM ONLINE', monogramTagline: 'ENGINEERED TO MATTER.', workLabel: 'WORK',
+      heroArtLabel: 'Abstract illustration of software engineering and development', codeStatus: 'SYSTEM ONLINE',
     },
     projects: [
       {
@@ -166,18 +158,14 @@ export const content: Record<Locale, PortfolioContent> = {
     labels: {
       navigation: 'Navegación principal', navProjects: 'Proyectos', navExpertise: 'Especialidades', navAbout: 'Sobre mí',
       navContact: 'Hablemos', home: 'Ir al inicio', language: 'Seleccionar idioma', theme: 'Cambiar entre tema claro y oscuro',
-      openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', skipToContent: 'Saltar al contenido',
-      heroKicker: 'HOLA, SOY', heroRole: 'DESARROLLADOR FULL STACK', heroLineOne: 'Diseño ideas', heroLineTwo: 'Construyo', heroSolution: 'soluciones.',
-      exploreProjects: 'Explorar proyectos', workTogether: 'Trabajemos juntos', scrollToExplore: 'DESLIZA PARA EXPLORAR', heroHighlights: 'Resumen del portafolio', heroLanguages: 'Idiomas',
+      openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', skipToContent: 'Saltar al contenido', heroLineOne: 'Diseño ideas', heroLineTwo: 'Construyo', heroSolution: 'soluciones.',
+      exploreProjects: 'Explorar proyectos', workTogether: 'Trabajemos juntos',
       codeDesign: 'DISEÑAR', codeIntent: 'CON INTENCIÓN', codeBuild: 'CONSTRUIR', codeJudgment: 'CON CRITERIO',
-      ticker: 'Tecnologías y áreas de trabajo', architecture: 'ARQUITECTURA', digitalProduct: 'PRODUCTO DIGITAL',
-      selectedWork: 'TRABAJO SELECCIONADO', projectsTitle: 'Proyectos que', projectsEmphasis: 'resuelven.',
+      ticker: 'Tecnologías y áreas de trabajo', architecture: 'ARQUITECTURA', digitalProduct: 'PRODUCTO DIGITAL', projectsTitle: 'Proyectos que', projectsEmphasis: 'resuelven.',
       projectsIntro: 'Una selección de productos y plataformas. Cada caso indica su estado real: publicado, personal o en planificación.',
       filterProjects: 'Filtrar proyectos', all: 'Todos',
       categories: { institutional: 'Institucional', product: 'Producto', concept: 'Exploración' },
-      projectsNote: 'Los casos muestran el alcance y el estado de cada iniciativa; no se exponen repositorios privados ni datos institucionales.',
-      whatIDo: 'QUÉ HAGO', expertiseTitle: 'De la necesidad al', expertiseEmphasis: 'producto funcional.',
-      aLittleAbout: 'UN POCO SOBRE MÍ', aboutTitle: 'Tecnología con', aboutEmphasis: 'propósito.',
+      projectsNote: 'Los casos muestran el alcance y el estado de cada iniciativa; no se exponen repositorios privados ni datos institucionales.', expertiseTitle: 'De la necesidad al', expertiseEmphasis: 'producto funcional.', aboutTitle: 'Tecnología con', aboutEmphasis: 'propósito.',
       aboutLead: 'No se trata solo de escribir código. Se trata de entender el problema antes de construir la solución.',
       career: 'TRAYECTORIA', myApproach: 'MI ENFOQUE', approachTitle: 'Menos ruido.', approachEmphasis: 'Más impacto.',
       principleClarity: 'Claridad', principleClarityText: 'Primero comprender el contexto y lo que realmente necesita el usuario.',
@@ -189,17 +177,16 @@ export const content: Record<Locale, PortfolioContent> = {
       letsMakeItWork: 'HAGAMOS QUE FUNCIONE.', contactTagline: 'DESARROLLO WEB / SISTEMAS / PRODUCTO',
       footerMotto: 'Software bien pensado. Soluciones que funcionan.', backToTop: 'Volver arriba', footerPortfolio: 'Portafolio personal.', builtWith: 'Construido con',
       viewProject: 'Ver proyecto', caseBack: 'Volver a proyectos', caseStatus: 'ESTADO', casePeriod: 'PERIODO', caseRole: 'ROL',
-      caseOverview: 'UNA VISTA DEL PROYECTO', caseOverviewText: 'El enfoque, el alcance y las decisiones que dan forma a esta iniciativa.',
-      caseVisitSite: 'Visitar sitio web', caseChallenge: '01 / EL RETO', caseChallengeTitle: 'Entender el problema.',
-      caseApproach: '02 / LA ESTRATEGIA', caseApproachTitle: 'Diseñar la solución.',
-      caseContribution: '03 / MI PARTICIPACIÓN', caseContributionTitle: 'Convertirlo en producto.', nextProject: 'SIGUIENTE PROYECTO',
-      notFoundTitle: 'PÁGINA NO ENCONTRADA', notFoundMessage: 'Esta ruta no existe o ha cambiado de lugar.', returnHome: 'Volver al inicio',
+      caseOverview: 'Una vista del proyecto', caseOverviewText: 'El enfoque, el alcance y las decisiones que dan forma a esta iniciativa.',
+      caseVisitSite: 'Visitar sitio web', caseChallenge: 'El reto', caseChallengeTitle: 'Entender el problema.',
+      caseApproach: 'La estrategia', caseApproachTitle: 'Diseñar la solución.',
+      caseContribution: 'Mi participación', caseContributionTitle: 'Convertirlo en producto.', nextProject: 'Siguiente proyecto',
+      notFoundTitle: 'Página no encontrada', notFoundMessage: 'Esta ruta no existe o ha cambiado de lugar.', returnHome: 'Volver al inicio',
       pageTitle: 'Yemis Paredez — Desarrollador de Software', casePageTitle: 'Caso de proyecto', copiedEmail: 'Correo copiado al portapapeles', socialNetworks: 'Redes sociales',
       workflowReceived: 'DOCUMENTO RECIBIDO', portalGovernment: 'GOBIERNO DIGITAL', portalHero: 'Conectamos personas.',
       financeSummary: 'RESUMEN · DEMO', financeIncome: 'INGRESOS', financeExpenses: 'GASTOS',
       loansTitle: 'MIS PRÉSTAMOS', loansHero: 'Todo bajo control.', loan: 'Préstamo', loanActive: 'ACTIVO', loanCurrent: 'AL DÍA',
-      heroArtLabel: 'Ilustración abstracta de ingeniería y desarrollo de software',
-      visualProject: 'PROYECTO', codeStatus: 'SISTEMA ACTIVO', monogramTagline: 'CREADO CON PROPÓSITO.', workLabel: 'TRABAJO',
+      heroArtLabel: 'Ilustración abstracta de ingeniería y desarrollo de software', codeStatus: 'SISTEMA ACTIVO',
     },
     projects: [
       {

@@ -20,8 +20,8 @@ const next = projects[(index + 1) % projects.length];
       <div class="container">
         <a href={`${homePath(locale)}#projects`} class="case-back"><span aria-hidden="true">←</span> {labels.caseBack}</a>
         <div class="case-hero-header">
-          <div><div class="section-label"><span>{project.order}</span> / {labels.categories[project.category].toUpperCase()}</div><h1>{project.name}<span>.</span></h1><p>{project.shortDescription}</p></div>
-          <div class="case-hero-symbol" aria-hidden="true">{project.order}<small>{site.brand} / {labels.workLabel}</small></div>
+          <div><h1>{project.name}<span>.</span></h1><p>{project.shortDescription}</p></div>
+          <p class="case-hero-kind">{labels.categories[project.category]}</p>
         </div>
         <div class="case-hero-footer"><span><b>{labels.caseStatus}</b>{project.status}</span><span><b>{labels.casePeriod}</b>{project.period}</span><span><b>{labels.caseRole}</b>{project.role}</span></div>
       </div>

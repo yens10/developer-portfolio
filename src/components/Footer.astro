@@ -1,4 +1,5 @@
 ---
+import BrandMark from './BrandMark.astro';
 import { site, socialLinks } from '../data/site';
 import { getContent } from '../i18n/content';
 import { homePath, type Locale } from '../i18n/config';
@@ -9,7 +10,7 @@ const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="container footer-main">
-    <a href={homePath(locale)} class="footer-wordmark"><img src="/brand/yemis-logo.svg" class="footer-logo" alt="" aria-hidden="true" width="40" height="40" />{site.brand}<span>.</span></a>
+    <a href={homePath(locale)} class="footer-wordmark"><BrandMark size={28} /><span class="wordmark-text">{site.brand}<span class="wordmark-period">.</span></span></a>
     <p>{labels.footerMotto}</p>
     <a href="#main-content" class="back-to-top" aria-label={labels.backToTop}>{labels.backToTop} <span aria-hidden="true">↑</span></a>
   </div>

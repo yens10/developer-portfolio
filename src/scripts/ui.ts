@@ -51,6 +51,12 @@ function closeMenu(): void {
 }
 
 function updateScroll(): void {
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  if (header) {
+    // The bar only grows a border once content passes beneath it.
+    if (window.scrollY > 8) header.dataset.scrolled = 'true';
+    else delete header.dataset.scrolled;
+  }
   const progress = document.querySelector<HTMLElement>('[data-scroll-progress]');
   if (!progress) return;
   const max = document.documentElement.scrollHeight - window.innerHeight;

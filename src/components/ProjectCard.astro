@@ -9,7 +9,6 @@ const { labels } = getContent(locale);
 <article class:list={['project-card', featured && 'project-card-featured']} data-category={project.category} data-reveal>
   <a href={projectPath(locale, project.slug)} class="project-link" aria-label={`${labels.viewProject}: ${project.name}`}>
     <div class="project-visual" data-tone={project.tone}>
-      <div class="project-visual-top"><span>{labels.visualProject} / {project.order}</span><span class="visual-cross">✳</span></div>
       {project.slug === 'workflow-platform' && (
         <div class="mock mock-workflow" aria-hidden="true">
           <div class="mock-side"><i></i><i></i><i></i><i></i></div>
@@ -40,7 +39,7 @@ const { labels } = getContent(locale);
     </div>
     <div class="project-content">
       <div class="project-meta"><span>{project.eyebrow}</span><span class="project-status">{project.status}</span></div>
-      <h3>{project.name}<span aria-hidden="true">↗</span></h3>
+      <h3>{project.name}</h3>
       <p>{project.shortDescription}</p>
       <div class="tag-group">{project.stack.slice(0, 3).map((tech) => <span class="tag">{tech}</span>)}</div>
     </div>

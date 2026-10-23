@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import ProjectCard from './ProjectCard.astro';
+import BrandMark from './BrandMark.astro';
 import { site, socialLinks } from '../data/site';
 import { getContent } from '../i18n/content';
 import type { Locale } from '../i18n/config';
@@ -18,21 +19,15 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
       <div class="hero-noise" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-content" data-reveal>
-          <div class="eyebrow hero-eyebrow"><span class="availability-dot"></span><span>{profile.availability}</span></div>
-          <p class="hero-kicker">{labels.heroKicker} {site.name.toUpperCase()} <span>—</span> {labels.heroRole}</p>
           <h1 id="hero-title">{labels.heroLineOne}<span class="hero-line">.</span><br />{labels.heroLineTwo} <span class="hero-gradient">{labels.heroSolution}</span></h1>
+          <p class="hero-byline">{site.name} — {profile.role}</p>
           <p class="hero-description">{profile.description}</p>
           <div class="hero-buttons">
             <a href="#projects" class="button button-primary">{labels.exploreProjects} <span aria-hidden="true">↗</span></a>
             <a href="#contact" class="button button-ghost">{labels.workTogether} <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-highlights" role="group" aria-label={labels.heroHighlights}>
-            <div class="hero-highlight"><strong>{projects.length.toString().padStart(2, '0')}</strong><span>{labels.navProjects}</span></div>
-            <div class="hero-highlight"><strong>EN / ES</strong><span>{labels.heroLanguages}</span></div>
-          </div>
           <div class="hero-lower">
-            <div class="hero-lower-line" aria-hidden="true"></div>
-            <span><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5v13m0 0-5-5m5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> {labels.scrollToExplore}</span>
+            <span class="hero-status"><span class="availability-dot"></span>{profile.availability}</span>
             <span>{profile.location}</span>
           </div>
         </div>
@@ -47,7 +42,6 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
           </div>
           <div class="hero-chip hero-chip-top" aria-hidden="true"><span>✳</span><b>{labels.codeDesign}</b><small>{labels.codeIntent}</small></div>
           <div class="hero-chip hero-chip-bottom" aria-hidden="true"><span>↗</span><b>{labels.codeBuild}</b><small>{labels.codeJudgment}</small></div>
-          <div class="hero-art-corner" aria-hidden="true">Y — 26</div>
         </div>
       </div>
       <div class="hero-bottom-line" aria-hidden="true"></div>
@@ -62,15 +56,12 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
     <section id="projects" class="section section-projects" aria-labelledby="projects-title">
       <div class="container">
         <div class="section-header" data-reveal>
-          <div>
-            <div class="section-label"><span>01</span> / {labels.selectedWork}</div>
-            <h2 id="projects-title">{labels.projectsTitle} <em>{labels.projectsEmphasis}</em></h2>
-          </div>
+          <h2 id="projects-title">{labels.projectsTitle} <em>{labels.projectsEmphasis}</em></h2>
           <p>{labels.projectsIntro}</p>
         </div>
         <div class="filter-bar" role="group" aria-label={labels.filterProjects} data-reveal>
           {categories.map((category, i) => (
-            <button type="button" class:list={['filter-button', i === 0 && 'active']} data-filter={category} aria-pressed={i === 0}>{category === 'all' ? labels.all : labels.categories[category]}<span>{category === 'all' ? projects.length.toString().padStart(2, '0') : projects.filter((p) => p.category === category).length.toString().padStart(2, '0')}</span></button>
+            <button type="button" class:list={['filter-button', i === 0 && 'active']} data-filter={category} aria-pressed={i === 0}>{category === 'all' ? labels.all : labels.categories[category]}<span>{category === 'all' ? projects.length : projects.filter((p) => p.category === category).length}</span></button>
           ))}
         </div>
         <div class="project-grid" data-project-grid>
@@ -83,19 +74,16 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
     <section id="expertise" class="section section-services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-header section-header-stacked" data-reveal>
-          <div class="section-label"><span>02</span> / {labels.whatIDo}</div>
           <h2 id="services-title">{labels.expertiseTitle}<br /><em>{labels.expertiseEmphasis}</em></h2>
         </div>
-        <div class="services-grid">
+        <div class="services-list">
           {capabilities.map((item) => (
-            <article class="service-card" data-reveal>
-              <div class="service-top"><span>{item.index} / 03</span><span class="service-icon" aria-hidden="true">
-                {item.icon === 'window' && <svg viewBox="0 0 32 32" width="32" height="32" fill="none"><rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h26M9 9h.1M13 9h.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>}
-                {item.icon === 'layers' && <svg viewBox="0 0 32 32" width="32" height="32" fill="none"><path d="m16 4 12 6.5-12 6.5L4 10.5 16 4ZM4 16l12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>}
-                {item.icon === 'spark' && <svg viewBox="0 0 32 32" width="32" height="32" fill="none"><path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M25.9 6.1 6.1 25.9" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="5" fill="currentColor"/></svg>}
-              </span></div>
-              <div><h3>{item.title}</h3><p>{item.description}</p></div>
-              <div class="service-tags">{item.tags.map((tag) => <span>{tag}</span>)}</div>
+            <article class="service-row" data-reveal>
+              <h3>{item.title}</h3>
+              <div class="service-body">
+                <p>{item.description}</p>
+                <div class="service-tags">{item.tags.map((tag) => <span>{tag}</span>)}</div>
+              </div>
             </article>
           ))}
         </div>
@@ -105,18 +93,24 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
     <section id="about" class="section section-about" aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="about-left" data-reveal>
-          <div class="section-label"><span>03</span> / {labels.aLittleAbout}</div>
           <h2 id="about-title">{labels.aboutTitle} <em>{labels.aboutEmphasis}</em></h2>
           <div class="about-monogram" aria-hidden="true">
-            <div class="about-mark"><img src="/brand/yemis-logo.svg" width="168" height="168" alt="" loading="lazy" decoding="async" /></div>
-            <div class="about-mark-caption"><strong>{site.name}</strong><span>{labels.heroRole}</span></div>
+            <BrandMark class="about-mark" size={132} />
+            <div class="about-mark-caption"><strong>{site.name}</strong><span>{profile.role}</span></div>
           </div>
         </div>
         <div class="about-right" data-reveal>
           <p class="about-lead">{labels.aboutLead}</p>
           <p class="about-copy">{profile.about}</p>
           <div class="highlight-list">
-            {highlights.map((highlight) => <div><span aria-hidden="true">✳</span><p>{highlight}</p></div>)}
+            {highlights.map((highlight) => (
+              <div>
+                <svg class="highlight-bullet" viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
+                  <path d="M3 8.4 6.4 12 13 4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p>{highlight}</p>
+              </div>
+            ))}
           </div>
           <h3 class="timeline-heading">{labels.career}</h3>
           <div class="timeline">
@@ -133,17 +127,17 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
 
     <section class="section section-principles" aria-label={labels.myApproach}>
       <div class="container principles-grid">
-        <div class="principle-lead" data-reveal><span>{labels.myApproach}</span><h2>{labels.approachTitle}<br /><em>{labels.approachEmphasis}</em></h2></div>
-        <div class="principle" data-reveal><span>01 /</span><h3>{labels.principleClarity}</h3><p>{labels.principleClarityText}</p></div>
-        <div class="principle" data-reveal><span>02 /</span><h3>{labels.principleQuality}</h3><p>{labels.principleQualityText}</p></div>
-        <div class="principle" data-reveal><span>03 /</span><h3>{labels.principleDelivery}</h3><p>{labels.principleDeliveryText}</p></div>
+        <div class="principle-lead" data-reveal><h2>{labels.approachTitle}<br /><em>{labels.approachEmphasis}</em></h2></div>
+        <div class="principle" data-reveal><h3>{labels.principleClarity}</h3><p>{labels.principleClarityText}</p></div>
+        <div class="principle" data-reveal><h3>{labels.principleQuality}</h3><p>{labels.principleQualityText}</p></div>
+        <div class="principle" data-reveal><h3>{labels.principleDelivery}</h3><p>{labels.principleDeliveryText}</p></div>
       </div>
     </section>
 
     <section id="contact" class="section section-contact" aria-labelledby="contact-title">
       <div class="container contact-inner">
         <div class="contact-glow" aria-hidden="true"></div>
-        <div class="contact-top" data-reveal><span class="section-label"><span>04</span> / {labels.contact}</span><span class="contact-availability"><span class="availability-dot"></span>{profile.availability}</span></div>
+        <div class="contact-top" data-reveal><span class="contact-availability"><span class="availability-dot"></span>{profile.availability}</span></div>
         <div data-reveal>
           <h2 id="contact-title">{labels.contactTitle}<br /><em>{labels.contactEmphasis}</em></h2>
           <p>{labels.contactIntro}</p>
