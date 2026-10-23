@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./public/brand/yemis-logo.svg" alt="Yemis Paredez logo" width="96" height="96" />
+
 # Yemis Paredez
 
 **Software Developer · Content Creator**
