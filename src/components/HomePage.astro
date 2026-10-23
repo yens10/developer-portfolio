@@ -26,6 +26,10 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
             <a href="#projects" class="button button-primary">{labels.exploreProjects} <span aria-hidden="true">↗</span></a>
             <a href="#contact" class="button button-ghost">{labels.workTogether} <span aria-hidden="true">↗</span></a>
           </div>
+          <div class="hero-highlights" role="group" aria-label={labels.heroHighlights}>
+            <div class="hero-highlight"><strong>{projects.length.toString().padStart(2, '0')}</strong><span>{labels.navProjects}</span></div>
+            <div class="hero-highlight"><strong>EN / ES</strong><span>{labels.heroLanguages}</span></div>
+          </div>
           <div class="hero-lower">
             <div class="hero-lower-line" aria-hidden="true"></div>
             <span><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5v13m0 0-5-5m5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> {labels.scrollToExplore}</span>
@@ -103,7 +107,10 @@ const categories = ['all', 'institutional', 'product', 'concept'] as const;
         <div class="about-left" data-reveal>
           <div class="section-label"><span>03</span> / {labels.aLittleAbout}</div>
           <h2 id="about-title">{labels.aboutTitle} <em>{labels.aboutEmphasis}</em></h2>
-          <div class="about-monogram" aria-hidden="true"><span>Y</span><i>{labels.monogramTagline}</i></div>
+          <div class="about-monogram" aria-hidden="true">
+            <div class="about-mark"><img src="/brand/yemis-logo.svg" width="168" height="168" alt="" loading="lazy" decoding="async" /></div>
+            <div class="about-mark-caption"><strong>{site.name}</strong><span>{labels.heroRole}</span></div>
+          </div>
         </div>
         <div class="about-right" data-reveal>
           <p class="about-lead">{labels.aboutLead}</p>
