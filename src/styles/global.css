@@ -491,38 +491,27 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
 
 /* Language selection: stable on desktop and accessible on mobile. */
 .language-switch {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 3px;
-  padding: 4px;
-  border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  background: var(--panel);
-}
-.language-switch a {
   display: inline-grid;
   place-items: center;
-  min-width: 35px;
-  min-height: 33px;
-  padding: 5px;
-  border-radius: 7px;
-  color: var(--muted);
-  transition: background .2s, color .2s;
+  flex: 0 0 auto;
+  width: 43px;
+  height: 43px;
+  padding: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--accent);
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
 }
+.language-switch:hover { background: var(--panel-2); border-color: var(--accent-text); }
+.language-switch:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; }
 .language-flag {
   display: block;
-  width: 25px;
-  height: 17px;
+  width: 27px;
+  height: 18px;
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .14);
 }
-.language-switch a:hover { background: var(--panel-2); color: var(--text); }
-.language-switch a[aria-current='page'], .language-switch a[aria-current='page']:hover {
-  background: var(--accent);
-  color: var(--accent-dark);
-}
-.language-switch a:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; }
 @media (max-width: 760px) {
   .nav-shell { gap: 12px; }
   .nav-actions { gap: 8px; }
@@ -531,8 +520,7 @@ h2 em, .principle-lead em { color: var(--accent-text); font-style: normal; }
   .wordmark { font-size: 21px; }
   .site-logo { width: 32px; height: 32px; margin-right: 5px; }
   .nav-actions { gap: 6px; }
-  .language-switch { gap: 1px; padding: 3px; }
-  .language-switch a { min-width: 33px; min-height: 31px; padding: 4px; }
-  .language-flag { width: 23px; height: 16px; }
+  .language-switch { width: 37px; height: 37px; padding: 5px; }
+  .language-flag { width: 24px; height: 17px; }
   .nav-actions .icon-button { width: 37px; height: 37px; }
 }
